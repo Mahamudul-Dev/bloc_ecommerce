@@ -22,8 +22,14 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 android {
-    namespace "com.codejet.bloc_ecommerce.bloc_ecommerce"
+    namespace "com.codejet.bloc_ecommerce"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -45,10 +51,20 @@ android {
         applicationId "com.codejet.bloc_ecommerce.bloc_ecommerce"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
     }
 
     buildTypes {
@@ -64,4 +80,7 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation 'com.facebook.android:facebook-login:latest.release'
+    implementation 'com.android.support:multidex:2.0.1'
+}
