@@ -1,0 +1,22 @@
+[debug] [2024-03-01T18:00:46.181Z] ----------------------------------------------------------------------
+[debug] [2024-03-01T18:00:46.185Z] Command:       /home/mahamudul-dev/.nvm/versions/node/v20.11.0/bin/node /home/mahamudul-dev/.nvm/versions/node/v20.11.0/bin/firebase apps:create ios bloc_ecommerce (ios) --bundle-id=com.codejet.blocecommerce.blocEcommerce --json --project=bloc-ecommerce-codejet
+[debug] [2024-03-01T18:00:46.186Z] CLI Version:   13.1.0
+[debug] [2024-03-01T18:00:46.186Z] Platform:      linux
+[debug] [2024-03-01T18:00:46.187Z] Node Version:  v20.11.0
+[debug] [2024-03-01T18:00:46.187Z] Time:          Sat Mar 02 2024 00:00:46 GMT+0600 (Bangladesh Standard Time)
+[debug] [2024-03-01T18:00:46.187Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-01T18:00:46.196Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-01T18:00:46.197Z] > authorizing via signed-in user (codejet.dev@gmail.com)
+[info] Create your IOS app in project bloc-ecommerce-codejet:
+[debug] [2024-03-01T18:00:46.202Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/bloc-ecommerce-codejet/iosApps [none]
+[debug] [2024-03-01T18:00:46.203Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/bloc-ecommerce-codejet/iosApps {"displayName":"bloc_ecommerce (ios)","bundleId":"com.codejet.blocecommerce.blocEcommerce"}
+[debug] [2024-03-01T18:00:47.374Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/bloc-ecommerce-codejet/iosApps 409
+[debug] [2024-03-01T18:00:47.374Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/bloc-ecommerce-codejet/iosApps {"error":{"code":409,"message":"Requested entity already exists","status":"ALREADY_EXISTS"}}
+[debug] [2024-03-01T18:00:47.375Z] HTTP Error: 409, Requested entity already exists
+[debug] [2024-03-01T18:00:47.746Z] FirebaseError: HTTP Error: 409, Requested entity already exists
+    at responseToError (/home/mahamudul-dev/.nvm/versions/node/v20.11.0/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/home/mahamudul-dev/.nvm/versions/node/v20.11.0/lib/node_modules/firebase-tools/lib/apiv2.js:292:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to create iOS app for project bloc-ecommerce-codejet. See firebase-debug.log for more info.

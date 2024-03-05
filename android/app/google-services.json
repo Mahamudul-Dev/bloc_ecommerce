@@ -7,17 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:628641625346:android:38a4daefb16e62e4a07e1b",
+        "mobilesdk_app_id": "1:628641625346:android:c144891db6625028a07e1b",
         "android_client_info": {
-          "package_name": "com.codejet.bloc_ecommerce.bloc_ecommerce"
+          "package_name": "com.codejet.bloc_ecommerce"
         }
       },
       "oauth_client": [
         {
-          "client_id": "628641625346-ir419ki09l48k2lsm5i9n29fe69964nr.apps.googleusercontent.com",
+          "client_id": "628641625346-2q316h54l5ca0l48pvgd8bmhdmojudsk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.codejet.bloc_ecommerce.bloc_ecommerce",
+            "package_name": "com.codejet.bloc_ecommerce",
             "certificate_hash": "7b1360e24e6356e65caafee6feff3b677fe65035"
           }
         },
