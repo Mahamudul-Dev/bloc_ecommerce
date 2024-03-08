@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "628641625346-f3sk7lj71aban7qqm0jvedhqqa324sl7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codejet.bloc_ecommerce",
+            "certificate_hash": "dbb7cb5f0705c6ffce14e5c88145a5c99d662c8a"
+          }
+        },
+        {
           "client_id": "628641625346-nilsaco0ra4pi73c0n4a4ruft6tpq6ps.apps.googleusercontent.com",
           "client_type": 3
         }
