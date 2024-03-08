@@ -1,4 +1,4 @@
-package com.codejet.bloc_ecommerce.bloc_ecommerce
+package com.codejet.bloc_ecommerce
 
 import io.flutter.embedding.android.FlutterActivity
 
