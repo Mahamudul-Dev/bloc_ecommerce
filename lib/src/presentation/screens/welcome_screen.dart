@@ -38,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     SocialLoginButton(
                         buttonType: SocialLoginButtonType.facebook,
-                        onPressed: () {}),
+                        onPressed: () => context.read<LoginBloc>().add(RequestFacebookLogin())),
                     const Gap(10),
                     SocialLoginButton(
                         buttonType: SocialLoginButtonType.twitter,

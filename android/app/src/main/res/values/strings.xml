@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bloc Ecommerce</string>
-    <string name="fb_login_protocol_scheme">fb1820645645039601</string>
-    <string name="facebook_app_id">1820645645039601</string>
-    <string name="facebook_client_token">4565b28ed945f720e185985000887ddc</string>
+    <string name="fb_login_protocol_scheme">fb416839394231535</string>
+    <string name="facebook_app_id">416839394231535</string>
+    <string name="facebook_client_token">4dd758e5626b1d60f86f104924ad2605</string>
 </resources>
