@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:bloc_ecommerce/src/data/services/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -17,6 +19,9 @@ class RoutePages {
           return state.fullPath;
         }
       } else {
+        if(state.fullPath == Routes.LOGIN_ROUTE || state.fullPath == Routes.REGISTER_ROUTE){
+          return state.fullPath;
+        }
         return Routes.WELCOME_ROUTE;
       }
     },
@@ -43,6 +48,12 @@ class RoutePages {
           name: Routes.REGISTER_ROUTE,
           pageBuilder: (context, state) =>
               const MaterialPage(child: SignupScreen())),
+
+      GoRoute(
+          path: Routes.PRODUCT_DETAILS_ROUTE,
+          name: Routes.PRODUCT_DETAILS_ROUTE,
+          pageBuilder: (context, state) =>
+              const MaterialPage(child: ProductDetailsScreen())),
 
 
       ShellRoute(

@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class BrandCard extends StatelessWidget {
-  const BrandCard({super.key});
+  const BrandCard({
+    super.key,
+    required this.brandTitle,
+    required this.brandLogo,
+  });
+
+  final String brandTitle;
+  final String brandLogo;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +24,10 @@ class BrandCard extends StatelessWidget {
       child: Row(
         children: [
           
-          CachedNetworkImage(imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Adidas_logo.png'),
+          CachedNetworkImage(imageUrl: brandLogo),
           const Gap(7.0),
           Text(
-            'Addidas',
+            brandTitle,
             style: theme.textTheme.labelMedium?.copyWith(fontWeight: FontWeight.w600),
           )
         ],

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
 
 import '../../routes/route_pages.dart';
+import '../../utils/values.dart';
 import '../widgets/widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -74,16 +75,16 @@ class WelcomeScreen extends StatelessWidget {
                   TextButton(
                       onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
                       child: Text(
-                        'Signin',
+                        Values.SIGN_IN_BUTTON_TEXT,
                         style: Theme.of(context).textTheme.labelLarge?.copyWith(
                             color: Theme.of(context)
                                 .colorScheme
                                 .onPrimaryContainer),
-                      ))
+                      ),)
                 ],
               ),
               FullWidthButton(
-                buttonText: 'Create An Account',
+                buttonText: Values.CREATE_ACCOUNT_TEXT,
                 onTap: () => context.pushNamed(Routes.REGISTER_ROUTE),
               )
             ],

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/foundation.dart';
-import 'package:meta/meta.dart';
+import 'package:equatable/equatable.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../data/repository/repository.dart';
 
@@ -51,6 +51,25 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         }
       } catch (e){
         debugPrint(e.toString());
+      }
+    });
+
+    on<RequestEmailLogin>((event, emit) async {
+      debugPrint("Email: ${event.email}, Password: ${event.password}, Remember: ${event.isRemember}");
+     try {
+        await repository.signInWithEmail(event.email, event.password).then((value) => emit(LoginSuccess()));
+
+     } catch (e) {
+       emit(LoginFailed(e.toString()));
+     }
+    });
+
+
+    on<RequestSignOut>((event, emit) async {
+      try {
+        await repository.signoutUser().then((value) => emit(LogOutSuccess()));
+      } catch (e) {
+        emit(LogOutFailed(message: e.toString()));
       }
     });
   }

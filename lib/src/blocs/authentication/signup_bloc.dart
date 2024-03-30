@@ -1,16 +1,29 @@
-import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
+
+import '../../data/repository/repository.dart';
 
 part 'signup_event.dart';
 part 'signup_state.dart';
 
 class SignupBloc extends Bloc<SignupEvent, SignupState> {
-  SignupBloc() : super(SignupInitial()) {
-    on<SignupEvent>((event, emit) {
-      // TODO: implement event handler
+  AuthRepository repository;
+  SignupBloc(this.repository) : super(SignupInitial()) {
+    
+    
+    on<RequestEmailSignUp>((event, emit) async {
+      emit(SignUpLoading());
+     try {
+        await repository.signUpWithEmail(event.email, event.password, event.username);
+      emit(SignUpSuccess());
+     } catch (e) {
+       emit(SignUpFailed(message: e.toString()));
+     }
+      
     });
+
+
   }
 }

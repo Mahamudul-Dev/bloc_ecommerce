@@ -4,3 +4,4 @@ export 'home_screen.dart';
 export 'welcome_screen.dart';
 export 'wrapper.dart';
 export 'splash_screen.dart';
+export 'product_details_screen.dart';

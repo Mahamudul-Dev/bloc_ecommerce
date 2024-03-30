@@ -19,6 +19,12 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_auth-4.16.0" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_auth_web-5.8.13" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/google_sign_in-6.2.1" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_facebook_auth-6.1.1" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_secure_storage_web-1.1.2" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_facebook_auth_web-5.0.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/facebook_auth_desktop-1.0.3" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_secure_storage_windows-3.0.0" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_secure_storage-9.0.0" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
