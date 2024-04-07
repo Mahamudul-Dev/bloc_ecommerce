@@ -11,15 +11,18 @@ part 'routes.dart';
 class RoutePages {
   static final authService = AuthService();
   static final ROUTER = GoRouter(
-    redirect: (context, state){
-      if(authService.checkLoginStatus()){
-        if(state.fullPath == Routes.LOGIN_ROUTE || state.fullPath == Routes.REGISTER_ROUTE || state.fullPath == Routes.WELCOME_ROUTE) {
+    redirect: (context, state) {
+      if (authService.checkLoginStatus()) {
+        if (state.fullPath == Routes.LOGIN_ROUTE ||
+            state.fullPath == Routes.REGISTER_ROUTE ||
+            state.fullPath == Routes.WELCOME_ROUTE) {
           return Routes.HOME_ROUTE;
-        } else{
+        } else {
           return state.fullPath;
         }
       } else {
-        if(state.fullPath == Routes.LOGIN_ROUTE || state.fullPath == Routes.REGISTER_ROUTE){
+        if (state.fullPath == Routes.LOGIN_ROUTE ||
+            state.fullPath == Routes.REGISTER_ROUTE) {
           return state.fullPath;
         }
         return Routes.WELCOME_ROUTE;
@@ -30,14 +33,12 @@ class RoutePages {
           path: Routes.SPLASH_ROUTE,
           name: Routes.SPLASH_ROUTE,
           pageBuilder: (context, state) =>
-          const MaterialPage(child: SplashScreen())),
-
+              const MaterialPage(child: SplashScreen())),
       GoRoute(
           path: Routes.WELCOME_ROUTE,
           name: Routes.WELCOME_ROUTE,
           pageBuilder: (context, state) =>
-          const MaterialPage(child: WelcomeScreen())),
-
+              const MaterialPage(child: WelcomeScreen())),
       GoRoute(
           path: Routes.LOGIN_ROUTE,
           name: Routes.LOGIN_ROUTE,
@@ -48,14 +49,27 @@ class RoutePages {
           name: Routes.REGISTER_ROUTE,
           pageBuilder: (context, state) =>
               const MaterialPage(child: SignupScreen())),
-
       GoRoute(
           path: Routes.PRODUCT_DETAILS_ROUTE,
           name: Routes.PRODUCT_DETAILS_ROUTE,
           pageBuilder: (context, state) =>
               const MaterialPage(child: ProductDetailsScreen())),
-
-
+      GoRoute(
+          path: Routes.ADD_REVEIW,
+          name: Routes.ADD_REVEIW,
+          pageBuilder: (context, state) {
+            final obj = state.extra as Map;
+            print(obj);
+            return MaterialPage(
+                child: AddRevewScreen(
+              id: obj['id'],
+            ));
+          }),
+      GoRoute(
+          path: Routes.EXPLORE_REVEIWS,
+          name: Routes.EXPLORE_REVEIWS,
+          pageBuilder: (context, state) =>
+              const MaterialPage(child: ExploreReveiwsScreen())),
       ShellRoute(
         builder: (context, state, child) => Wrapper(child: child),
         routes: [

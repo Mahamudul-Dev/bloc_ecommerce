@@ -25,13 +25,18 @@ class FullWidthButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 80.h,
-        color: backgroundColor ?? Theme.of(context).colorScheme.onPrimaryContainer,
+        color:
+            backgroundColor ?? Theme.of(context).colorScheme.onPrimaryContainer,
         child: Center(
-            child: buttonChild ?? Text(
-              buttonText,
-              style: textStyle ?? Theme.of(context).textTheme.labelLarge?.copyWith(
-                  color: textColor ?? Theme.of(context).colorScheme.onSecondary),
-            )),
+          child: buttonChild ??
+              Text(
+                buttonText,
+                style: textStyle ??
+                    Theme.of(context).textTheme.labelLarge?.copyWith(
+                        color: textColor ??
+                            Theme.of(context).colorScheme.onSecondary),
+              ),
+        ),
       ),
     );
   }

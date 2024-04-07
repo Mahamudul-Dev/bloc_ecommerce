@@ -1,8 +1,8 @@
-import 'dart:math';
 
-import 'package:bloc_ecommerce/src/data/models/product_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import '../models/models.dart';
 
 class ProductRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -31,6 +31,7 @@ class ProductRepository {
       
       if(data.data() != null){
         final product = ProductModel.fromJson(data.data()!);
+        product.productId = data.id;
         return product;
       } else {
         return null;
@@ -38,6 +39,23 @@ class ProductRepository {
 
     } catch (e) {
       debugPrint('Error: $e');
+      throw Exception(e);
+    }
+  }
+
+  Future<ReviewModel?> submitReveiwAndRating(ReviewModel review) async {
+    try {
+      final data = await _firestore.collection('reviews').add(review.toJson());
+
+      final document = await data.get();
+      if(document.data() != null){
+        final review = ReviewModel.fromJson(document.data()!);
+        return review;
+      } else {
+        return null;
+      }
+    } catch (e) {
+      debugPrint("Error: $e");
       throw Exception(e);
     }
   }

@@ -9,4 +9,6 @@ class Routes {
   static const String REGISTER_ROUTE = '/register';
   static const String HOME_ROUTE = '/home';
   static const String PRODUCT_DETAILS_ROUTE = '/product-details';
+  static const String ADD_REVEIW = '/add-reveiw';
+  static const String EXPLORE_REVEIWS = '/explore-reveiws';
 }
